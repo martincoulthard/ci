@@ -7,6 +7,7 @@ RUN apk add --update \
     py-pip \
     build-base \
     nodejs=10.16.0-r0 \
+    npm=10.16.0-r0 \
     && pip install --upgrade --user \
     awscli==1.16.193 \
     awsebcli==3.15.2 \

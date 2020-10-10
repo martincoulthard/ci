@@ -3,6 +3,9 @@ FROM docker:18.09.7
 RUN apk add --update \
     git \
     zip \
+    openssh \
+    openssl-dev \
+    libffi-dev \
     python \
     python-dev \
     py-pip \

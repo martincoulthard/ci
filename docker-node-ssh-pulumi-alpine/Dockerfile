@@ -28,7 +28,8 @@ RUN apk add --update \
     cryptography==2.4.2 \
     setuptools colorama==0.3.9 PyYAML==3.13 \
     && apk --purge -v del py-pip \
-    && rm -rf /var/cache/apk/*
+    && rm -rf /var/cache/apk/* \
+    && npm install --global yarn
 
 
 COPY --from=pulumi /pulumi/bin/pulumi /pulumi/bin/pulumi

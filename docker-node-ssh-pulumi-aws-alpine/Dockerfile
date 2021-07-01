@@ -8,6 +8,8 @@ FROM ${PULUMI_IMAGE}:${PULUMI_VERSION} as pulumi
 
 FROM docker:18.09.7
 
+
+
 RUN apk add --update \
     jq \
     git \
@@ -27,6 +29,10 @@ RUN apk add --update \
     libc6-compat \
     ca-certificates \
     && pip install --upgrade --user \
+    # docker-compose pulls die with paramiko 2.7.2:: AttributeError: type object 'EllipticCurvePublicKey' has no attribute 'from_encoded_point'
+    paramiko==2.4.2 \ 
+    awscli==1.16.193 \
+    awsebcli==3.15.2 \
     cryptography==2.4.2 \
     setuptools colorama==0.3.9 PyYAML==3.13 \
     && apk --purge -v del py-pip \

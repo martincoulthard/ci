@@ -4,6 +4,7 @@ RUN apk add --update \
     git \
     zip \
     curl \
+    jq \
     openssh \
     openssl-dev \
     libffi-dev \
